@@ -1,0 +1,6 @@
+val lines = sc.textFile("data_input") //Load file into memory
+val outNodes = lines.map(line => line.split("\t")(0)) //Convert from string into array
+val outNodesCount = outNodes.map(node => (node, 1)).reduceByKey(_+_) //Put nodes into a map and then combine it, keeping track of how many times a node is counted
+val maxOutdegree = outNodesCount.reduce((x,y) => if(x._2 > y._2) x else y)._2
+val nodesWithLargestOutdegree = outNodesCount.filter(_._2 == maxOutdegree)
+val result = nodesWithLargestOutdegree.map(node => node._1)

@@ -1,0 +1,11 @@
+#ignores files for uplaoding to git
+valws379.bin
+vgcore.*
+*.dat
+*.log
+core
+testLoopProgram
+valws379
+quicksort
+heapsort
+mergesort

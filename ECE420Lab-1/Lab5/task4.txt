@@ -1,0 +1,5 @@
+val pairs = sc.textFile("data_input").map(x => x.split("\t")).map(x => (x(0), x(1)))
+val flipped = pairs.map(x => (x._2, x._1))
+val second_hop = flipped.join(pairs).map(_._2)
+val combined_list = pairs ++ second_hop
+val result = combined_list.filter(path => path._1 != path._2)

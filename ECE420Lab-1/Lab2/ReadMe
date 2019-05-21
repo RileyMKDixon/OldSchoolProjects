@@ -1,0 +1,38 @@
+Read me for ECE 420 Lab2 Script Kit
+Jan. 2019
+
+Content
+=====
+1. demo/simpleClient.c 
+   demo/simpleServer.c  
+   ** A demo code for the client server communication system  
+----
+2. demo/arrayRW.c       
+   ** A demo for the multi-threaded read and write with given API
+----
+3. client.c             
+   ** The provided client code in order to test the server speed
+----
+4. attacker.c           
+   ** The provided client code in order to veriy the correctness of the data consistency
+----
+5. common.h
+   ** Provided server tools for message parsing, data read and write and saving the times
+----
+6. timer.h
+   ** Macro definition for the time measurement 
+----
+7. test.sh
+   ** A shell script showing you how to run your client 100 times.
+=====
+Please also find the detailed instructions in the comments of the individual files.
+
+
+To compile go to directory of the makefile and type "make" to compile all
+the binaries for each implementation. 
+
+Binary and its implementation used
+main -- Each string has its own ReadWrite Lock
+main1 -- There is a global Mutex lock for the entire array
+main2 -- Each string has its own Mutex lock
+main3 -- There is a global ReadWrite lock for the entire array.

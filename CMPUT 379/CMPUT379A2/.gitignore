@@ -1,0 +1,7 @@
+#ignore object files
+*.o
+
+#ignore any core dump files
+core
+gameserver379
+gameclient379

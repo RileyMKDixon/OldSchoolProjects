@@ -1,0 +1,1 @@
+val result = sc.textFile("data_input").map(x => (x.split("\t")(1), 1)).reduceByKey(_+_).reduce((x,y) => if(x._2 > y._2) x else y)._2

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">rmdixon-CountBook</string>
+    <string name="button_affirmative_action">Done</string>
+    <string name="button_cancel_action">Cancel</string>
+    <string name="button_new_counter">New Counter</string>
+    <string name="button_edit_counter">Edit</string>
+    <string name="button_reset_counter">Reset</string>
+    <string name="button_delete_counter">Delete</string>
+    <string name="name_hint">Counter Name</string>
+    <string name="current_value_hint">Current Value</string>
+    <string name="initial_value_hint">Initial Value</string>
+    <string name="comment_hint">Comment (optional)</string>
+</resources>

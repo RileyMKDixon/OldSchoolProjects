@@ -1,0 +1,47 @@
+Read me for ECE 420 Lab4 Script Kit
+Mar. 2017
+
+=====
+Overview:
+    There are three groups of scripts in this kit
+    
+-----
+    Data selection program and original data:
+    web-Standford.txt	original data
+    datatrim.c          source file to fetch a subset of the original data and pre-process it
+
+-----
+    Important functions:
+    timer.h        macro definition for the time measurement
+    Lab4IO.h       header for the Lab4IO.c, needs to be included if call the IOs directly from Lab4IO.c
+    Lab4IO.c       source file for the IO functions, needs to be referred in the compiler line if the functions are called in the program
+
+-----
+    Verification program:
+    serialtester.c source file for the testing program, depending on the Lab4IO.c
+=====
+Please also find the detailed instructions in the comments of the individual files.
+Web Graph data is from http://snap.stanford.edu/data/web-Stanford.html
+
+
+To build the application successfully first use datatrim.c to generate
+the desired data_input_link and data_input_meta files required by the program
+to run.
+
+Secondly, on each cluster machine, setup the directories required so that the
+./main executable has the same filepath relative-to-home on each cluster machine.
+If running on our cluster machine "user_17", this has been taken care of already.
+---THIS MAY REQUIRE EDITTING THE PATH VARIABLE IN THE MAKEFILE!!!---
+You do not need to place the main executable in at this time as it will be
+sent to the cluster when the executable is compiled.
+
+Third, edit the makefile so that the directed IP addresses for each cluster
+machine are correct. If running the program on our cluster machine "user_17", then
+leave the makefile as it is. The directories have already been setup.
+
+Fourth, run "make" to build the executable file, as well as to distribute the executable
+and the input data files to the cluster machines as defined in the makefile/hosts.
+
+Fifth, run "make run" or "mpirun -np 4 -f hosts ./main" to execute the program
+in parallel with the other machines on the cluster. The output file will be
+saved onto the master machine from which the program was initially run from.

@@ -1,0 +1,1 @@
+val result = sc.textFile("data_input").map(_.split("\t")).flatMap(p => List((p(0), p(1)), (p(1), p(0)))).groupByKey()
